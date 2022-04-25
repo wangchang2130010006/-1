@@ -1,0 +1,37 @@
+#R语言实验课作业  2022/4/25
+x<-c(1:1000)
+y<-atan(1/x)#1.1
+z<-1/tan(y)#1.2
+#2.1
+x==z
+identical(x,z)    # FALSE
+all.equal(x,z)    # TRUE
+all.equal(x,z,0)  #"Mean relative difference: 1.270335e-16"
+#3
+true_and_missing<-c(TRUE,NA)
+false_and_missing<-c(FALSE,NA)
+mixed<-c(TRUE,FALSE,NA)
+any(true_and_missing) #TRUE
+any(false_and_missing)#NA
+any(mixed)            #TRUE
+all(true_and_missing) #NA
+all(false_and_missing)#FALSE
+all(mixed)            #FALSE
+#4.1
+a<-sample(50:1000, 100, replace=FALSE)
+sum(a)
+xmd<-median(a,na.rm=TRUE)
+xmd
+xm<-mean(a)
+xm
+fc<-sum(sqrt((a-xm)^2)/50)
+fc
+#4.2
+d<-atan(1000)
+r<-d/2
+s<-(r^2)*pi
+#4.3
+p1<-c(2,3)
+p2<-c(13,22)
+A<-sqrt((p1[1]-p2[1])^2+(p1[2]-p2[2])^2)
+A
